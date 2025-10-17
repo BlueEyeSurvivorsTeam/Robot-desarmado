@@ -3,21 +3,30 @@ using UnityEngine;
 public class Animations : MonoBehaviour
 {
     Animator anim;
-    PlayerController pc;
+    MoveController mc;
+    JumpController jc;
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (GetComponentInParent<PlayerController>())
+        if (GetComponentInParent<MoveController>())
         {
-            pc = GetComponentInParent<PlayerController>();
+            mc = GetComponentInParent<MoveController>();
+        }
+        if(GetComponentInParent<JumpController>())
+        {
+            jc = GetComponentInParent<JumpController>();
         }
     }
 
     void Update()
     {
-        if (pc)
+        if (mc)
         {
-            anim.SetFloat("Move", pc.currentAnimSpeed);
+            anim.SetFloat("Move", mc.currentAnimSpeed);
+        }
+        if(jc)
+        {
+            anim.SetBool("IsGrounded", jc.isGrounded);
         }
     }
 }

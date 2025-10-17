@@ -1,0 +1,37 @@
+using UnityEngine;
+
+public class JumpController : MonoBehaviour
+{
+    public float jumpValue;
+    public bool canJump;
+    public KeyCode jumpKey;
+    public bool isGrounded { get; private set; }
+    Rigidbody rb;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public void IsGrounded(bool grounded)
+    {
+        isGrounded = grounded;
+    }
+    void Update()
+    {
+        if (canJump && isGrounded)
+        {
+            GetInput();
+        }
+    }
+    void GetInput()
+    {
+        if (Input.GetKey(jumpKey))
+        {
+            Jump();
+        }
+    }
+    void Jump()
+    {
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpValue, rb.linearVelocity.z);
+    }
+}
