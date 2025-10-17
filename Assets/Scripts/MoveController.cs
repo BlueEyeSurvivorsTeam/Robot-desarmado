@@ -22,13 +22,13 @@ public class MoveController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rc = GetComponent<RotateController>();
-        rc.SetValues(rotationSpeed, currentSpeed);
+        rc.SetValues(rotationSpeed, currentSpeed, rotationInput);
     }
 
     void Update()
     {
         GetInput();
-        rc.SetValues(rotationSpeed, currentSpeed);
+        rc.SetValues(rotationSpeed, currentSpeed, rotationInput);
     }
 
     void FixedUpdate()

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class RotateController : MonoBehaviour
 {
-    public GameObject pivot;
+    public GameObject playerPivot;
+    public GameObject cameraPivot;
     private float rotationSpeed;
     private float currentSpeed;
     private float rotationInput;
-    public void SetValues(float rotation, float speed)
+
+    public void SetValues(float rotation, float speed, float input)
     {
         rotationSpeed = rotation;
         currentSpeed = speed;
+        rotationInput = input;
     }
+
     void Update()
-    {
-        rotationInput = Input.mousePositionDelta.x;
+    {;
         RotatePlayer();
     }
     void RotatePlayer()
@@ -23,11 +26,15 @@ public class RotateController : MonoBehaviour
         if (Mathf.Abs(rotationInput) > 0.1f && currentSpeed == 0)
         {
             float rotationAmount = rotationInput * rotationSpeed * Time.deltaTime;
-            pivot.transform.Rotate(0f, 0f, rotationAmount);
+            playerPivot.transform.Rotate(0f, 0f, rotationAmount);
+            cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
         }
         else if(currentSpeed != 0)
         {
-            pivot.transform.localRotation = Quaternion.identity;
+            playerPivot.transform.localRotation = Quaternion.identity;
+            //cameraPivot.transform.rotation = playerPivot.transform.rotation;
+            cameraPivot.transform.rotation = Quaternion.Euler(90 * Mathf.Rad2Deg, playerPivot.transform.rotation.eulerAngles.y, playerPivot.transform.rotation.eulerAngles.z);
+
         }
     }
 }

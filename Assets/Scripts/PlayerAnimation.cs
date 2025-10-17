@@ -26,7 +26,7 @@ public class Animations : MonoBehaviour
         }
         if(jc)
         {
-            anim.SetBool("IsGrounded", jc.isGrounded);
+            anim.SetBool("IsJumping", jc.isJumping);
         }
     }
 }

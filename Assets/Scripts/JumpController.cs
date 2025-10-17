@@ -5,7 +5,8 @@ public class JumpController : MonoBehaviour
     public float jumpValue;
     public bool canJump;
     public KeyCode jumpKey;
-    public bool isGrounded { get; private set; }
+    bool isGrounded;
+    public bool isJumping { get; private set; }
     Rigidbody rb;
     void Start()
     {
@@ -15,6 +16,10 @@ public class JumpController : MonoBehaviour
     public void IsGrounded(bool grounded)
     {
         isGrounded = grounded;
+        if(isGrounded && isJumping)
+        {
+            isJumping = false;
+        }
     }
     void Update()
     {
@@ -33,5 +38,6 @@ public class JumpController : MonoBehaviour
     void Jump()
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpValue, rb.linearVelocity.z);
+        isJumping = true;
     }
 }
