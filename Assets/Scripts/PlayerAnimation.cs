@@ -17,7 +17,7 @@ public class Animations : MonoBehaviour
     {
         if (pc)
         {
-            anim.SetFloat("Move", pc.currentSpeed);
+            anim.SetFloat("Move", pc.currentAnimSpeed);
         }
     }
 }
