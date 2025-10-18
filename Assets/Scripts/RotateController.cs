@@ -6,35 +6,29 @@ public class RotateController : MonoBehaviour
 {
     public GameObject playerPivot;
     public GameObject cameraPivot;
-    private float rotationSpeed;
-    private float currentSpeed;
-    private float rotationInput;
-
-    public void SetValues(float rotation, float speed, float input)
-    {
-        rotationSpeed = rotation;
-        currentSpeed = speed;
-        rotationInput = input;
-    }
+    public KeyCode resetKey = KeyCode.R;
+    public float rotationSpeed;
 
     void Update()
-    {;
+    {
+        GetInput();
         RotatePlayer();
+    }
+    void GetInput()
+    {
+        if(Input.GetKeyDown(resetKey))
+        {
+            playerPivot.transform.localRotation = Quaternion.identity;
+            cameraPivot.transform.rotation = playerPivot.transform.rotation;
+        }
     }
     void RotatePlayer()
     {
-        if (Mathf.Abs(rotationInput) > 0.1f && currentSpeed == 0)
+        if (Input.mousePositionDelta != Vector3.zero)
         {
-            float rotationAmount = rotationInput * rotationSpeed * Time.deltaTime;
+            float rotationAmount = Input.mousePositionDelta.x * rotationSpeed * Time.deltaTime;
             playerPivot.transform.Rotate(0f, 0f, rotationAmount);
             cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
-        }
-        else if(currentSpeed != 0)
-        {
-            playerPivot.transform.localRotation = Quaternion.identity;
-            //cameraPivot.transform.rotation = playerPivot.transform.rotation;
-            cameraPivot.transform.rotation = Quaternion.Euler(90 * Mathf.Rad2Deg, playerPivot.transform.rotation.eulerAngles.y, playerPivot.transform.rotation.eulerAngles.z);
-
         }
     }
 }

@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Robot
+  m_Name: Torso
   m_Controller: {fileID: 9100000, guid: 054f2f624fd86264a8f9399f37dd8afc, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 8cf11c86c1383b04c8725962017312eb, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 8cf11c86c1383b04c8725962017312eb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d8d28838a1de46a4bbd1795f6f7e7a86, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 92d52d5c53e2a6b4ca77c1781e335384, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 92d52d5c53e2a6b4ca77c1781e335384, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0def3616159e2dd44aa4ac3c1473052a, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d5dad4448f3327a43aa0d4b5cf5bd050, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d5dad4448f3327a43aa0d4b5cf5bd050, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c871b0b8e6620f41829cc5dd460a317, type: 2}

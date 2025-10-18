@@ -4,7 +4,7 @@ public class JumpController : MonoBehaviour
 {
     public float jumpValue;
     public bool canJump;
-    public KeyCode jumpKey;
+    public KeyCode jumpKey = KeyCode.Space;
     bool isGrounded;
     public bool isJumping { get; private set; }
     Rigidbody rb;
