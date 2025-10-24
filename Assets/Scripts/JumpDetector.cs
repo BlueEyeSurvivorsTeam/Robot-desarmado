@@ -7,15 +7,15 @@ public class JumpDetector : MonoBehaviour
     bool isGrounded;
     bool touchPlayer;
 
+    void OnTriggerEnter(Collider other)
+    {
+        isGrounded = true;
+    }
     void OnTriggerStay(Collider other)
     {
-        if (other != this.GetComponentInParent<MoveController>())
+        if (other.GetComponentInParent<MoveController>())
         {
-            isGrounded = true;
-        }
-        if (other.GetComponentInParent<MoveController>() && other != this.GetComponentInParent<MoveController>())
-        {
-            touchPlayer = true; 
+            touchPlayer = true;
         }
         else
         {
@@ -24,16 +24,13 @@ public class JumpDetector : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if (other != this.GetComponentInParent<MoveController>())
-        {
-            isGrounded = false;
-        }
-        if (other.GetComponentInParent<MoveController>() && other != this.GetComponentInParent<MoveController>())
+        isGrounded = false;
+        if (other.GetComponentInParent<MoveController>())
         {
             touchPlayer = false;
         }
     }
-    public bool IsGrounded() 
+    public bool IsGrounded()
     {
         return isGrounded;
     }

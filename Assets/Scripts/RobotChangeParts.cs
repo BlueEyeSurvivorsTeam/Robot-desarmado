@@ -1,7 +1,5 @@
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class RobotChangeParts : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class RobotChangeParts : MonoBehaviour
     [Header("Botones")]
     public KeyCode changePartButton = KeyCode.Tab;
 
-    [Header("Cámaras")]
+    [Header("Cï¿½maras")]
     public CinemachineCamera playerCam;
     public CinemachineCamera legsCam;
 
@@ -44,7 +42,7 @@ public class RobotChangeParts : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha3) && state.isSeparate && partDetector.IsPartClose())
                 {
-                    ChangePart(robot,false,false,legs,1,0,this.gameObject);
+                    ChangePart(robot,false,false,legs, Vector3.zero,1,0,this.gameObject);
                 }
                 else if(Input.GetKeyDown(KeyCode.Alpha1) && state.isSeparate)
                 {
@@ -59,20 +57,20 @@ public class RobotChangeParts : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1) && !state.isSeparate)
                 {
-                    ChangePart(torso, true, true, legs, 1, 0, this.gameObject);
+                    ChangePart(torso, true, true, legs, -Vector3.left, 1, 0, this.gameObject);
                 }
                 else if (Input.GetKeyDown(KeyCode.Alpha2) && !state.isSeparate)
                 {
-                    ChangePart(torso, true, true, legs, 0, 1, legs);
+                    ChangePart(torso, true, true, legs, -Vector3.left, 0, 1, legs);
                 }
             }
         }   
     }
-    public void ChangePart(AnimatorOverrideController anim, bool isSeparate, bool dropping, GameObject drop, int playerPriority, int legsPriority, GameObject current)
+    public void ChangePart(AnimatorOverrideController anim, bool isSeparate, bool dropping, GameObject drop, Vector3 direction, int playerPriority, int legsPriority, GameObject current)
     {
         animPlayer.runtimeAnimatorController = anim;
         state.isSeparate = isSeparate;
-        if(dropping) Drop(drop);
+        if(dropping) Drop(drop, direction);
         else Take(drop);
         playerCam.Priority = playerPriority;
         legsCam.Priority = legsPriority;
@@ -84,11 +82,11 @@ public class RobotChangeParts : MonoBehaviour
         legsCam.Priority = legsPriority;
         state.SetCurrentPart(current);
     }
-    void Drop(GameObject part)
+    void Drop(GameObject part, Vector3 direction)
     {
         part.SetActive(true);
         part.transform.SetParent(null, false);
-        part.transform.position = transform.position + Vector3.down;
+        part.transform.position = transform.position + direction + (Vector3.up * 0.5f);
     }
     void Take(GameObject part)
     {
