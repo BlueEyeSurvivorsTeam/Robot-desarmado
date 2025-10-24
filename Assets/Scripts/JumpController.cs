@@ -5,32 +5,36 @@ public class JumpController : MonoBehaviour
     public float jumpValue;
     public bool canJump;
     public KeyCode jumpKey = KeyCode.Space;
-    bool isGrounded;
     public bool isJumping { get; private set; }
+    public JumpDetector jumpDetector;
     Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    public void IsGrounded(bool grounded)
+    void Update()
     {
-        isGrounded = grounded;
-        if(isGrounded && isJumping)
+        if (jumpDetector.IsGrounded() && isJumping)
         {
             isJumping = false;
         }
-    }
-    void Update()
-    {
-        if (canJump && isGrounded)
+        if (canJump)
         {
             GetInput();
+        }
+        if(RobotState.Instance.isSeparate && jumpDetector.TouchPlayer())
+        {
+            UnitOnJump();
         }
     }
     void GetInput()
     {
-        if (Input.GetKey(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && isJumping && !jumpDetector.IsGrounded())
+        {
+            Separate();
+        }
+        else if (Input.GetKeyDown(jumpKey) && jumpDetector.IsGrounded())
         {
             Jump();
         }
@@ -39,5 +43,26 @@ public class JumpController : MonoBehaviour
     {
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpValue, rb.linearVelocity.z);
         isJumping = true;
+    }
+    void Separate()
+    {
+        if(!RobotState.Instance.isSeparate)
+        {
+            if(GetComponent<RobotChangeParts>())
+            {
+                RobotChangeParts robot = GetComponent<RobotChangeParts>();
+                robot.ChangePart(robot.torso, true, true, robot.legs, 1, 0, this.gameObject);
+                Jump();
+            }
+        }
+    }
+    void UnitOnJump()
+    {
+        if (GetComponent<RobotChangeParts>())
+        {
+            RobotChangeParts robot = GetComponent<RobotChangeParts>();
+            transform.position = robot.legs.transform.position;
+            robot.ChangePart(robot.robot, false, false, robot.legs, 1, 0, this.gameObject);
+        }
     }
 }

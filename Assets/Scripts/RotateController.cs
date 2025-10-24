@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class RotateController : MonoBehaviour
 {
+    public bool canRotate = true;
     public GameObject playerPivot;
     public GameObject cameraPivot;
     public KeyCode resetKey = KeyCode.R;
-    public float rotationSpeed;
+    public float rotationSpeed = 120;
 
     void Update()
     {
-        GetInput();
-        RotatePlayer();
+        if (canRotate)
+        {
+            GetInput();
+            RotatePlayer();
+        }
     }
     void GetInput()
     {

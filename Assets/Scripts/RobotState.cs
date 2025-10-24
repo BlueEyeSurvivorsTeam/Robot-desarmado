@@ -1,45 +1,57 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEditor.Animations;
 using UnityEngine;
 
 public class RobotState : MonoBehaviour
 {
-    public Animator animPlayer;
+    public static RobotState Instance;
     [Header("Override Controllers")]
     public AnimatorOverrideController robot;
     public AnimatorOverrideController legs;
     public AnimatorOverrideController torso;
 
-    [Header("Botones")]
-    public KeyCode selectPart = KeyCode.Q;
-    public KeyCode separate = KeyCode.Mouse0;
+    [Header("Estados")]
+    public bool hasLeftArm = true;
+    public bool hasRightArm = true;
+    public bool isSeparate = false;
 
-    private AnimatorOverrideController current;
-
-    private void Update()
+    public GameObject currentTarget;
+    private List<GameObject> parts = new List<GameObject>();
+    private void Awake()
     {
-        GetInput();
+        Instance = this;
     }
-
-    void GetInput()
+    public void SetParts(GameObject legsPart, GameObject torsoPart)
     {
-        if(Input.GetKey(selectPart))
+        parts.Add(legsPart); 
+        parts.Add(torsoPart);  
+    }
+    public void SetCurrentPart(GameObject current)
+    {
+        currentTarget = current;
+        OffOtherParts();
+    }
+    void OffOtherParts()
+    {
+        for (int i = 0; i < parts.Count; i++)
         {
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            JumpController jc = parts[i].GetComponent<JumpController>();
+            RotateController rc = parts[i].GetComponent<RotateController>();
+            MoveController mc = parts[i].GetComponent<MoveController>();
+            if (parts[i] == currentTarget)
             {
-                current = robot;
+                if (jc != null) jc.canJump = true;
+                if (rc != null) rc.canRotate = true;
+                if (mc != null) mc.canMove = true; mc.canRun = true;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha2))
+            else
             {
-                current = legs;
+                if (jc != null) jc.canJump = false;
+                if (rc != null) rc.canRotate = false;
+                if (mc != null) mc.canMove = false; mc.canRun = false;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                current = torso;
-            }
-        }
-        if(Input.GetKeyDown(separate) && current != null)
-        {
-            animPlayer.runtimeAnimatorController = current;
         }
     }
 }

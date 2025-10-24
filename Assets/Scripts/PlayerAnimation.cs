@@ -3,23 +3,16 @@ using UnityEngine;
 public class Animations : MonoBehaviour
 {
     Animator anim;
-    MoveController mc;
-    JumpController jc;
+    public MoveController mc;
+    public JumpController jc;
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (GetComponentInParent<MoveController>())
-        {
-            mc = GetComponentInParent<MoveController>();
-        }
-        if(GetComponentInParent<JumpController>())
-        {
-            jc = GetComponentInParent<JumpController>();
-        }
     }
 
     void Update()
     {
+        if (!mc.canMove || !jc.canJump) return;
         if (mc)
         {
             anim.SetFloat("Move", mc.currentAnimSpeed);
