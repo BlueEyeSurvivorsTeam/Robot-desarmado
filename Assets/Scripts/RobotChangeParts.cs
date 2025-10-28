@@ -12,6 +12,7 @@ public class RobotChangeParts : MonoBehaviour
     public AnimatorOverrideController torso;
 
     [Header("Parte")]
+    public GameObject faceCamera;
     public GameObject legs;
     public Transform legsPoint;
 
@@ -57,11 +58,11 @@ public class RobotChangeParts : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1) && !state.isSeparate)
                 {
-                    ChangePart(torso, true, true, legs, -Vector3.left, 1, 0, this.gameObject);
+                    ChangePart(torso, true, true, legs, -transform.forward, 1, 0, this.gameObject);
                 }
                 else if (Input.GetKeyDown(KeyCode.Alpha2) && !state.isSeparate)
                 {
-                    ChangePart(torso, true, true, legs, -Vector3.left, 0, 1, legs);
+                    ChangePart(torso, true, true, legs, -transform.forward, 0, 1, legs);
                 }
             }
         }   
@@ -86,12 +87,14 @@ public class RobotChangeParts : MonoBehaviour
     {
         part.SetActive(true);
         part.transform.SetParent(null, false);
-        part.transform.position = transform.position + direction + (Vector3.up * 0.5f);
+        part.transform.position = transform.position + (direction + (Vector3.up * 0.5f));
+        faceCamera.SetActive(true);
     }
     void Take(GameObject part)
     {
         part.SetActive(false);
         part.transform.SetParent(legsPoint, false);
         part.transform.position = legsPoint.position;
+        faceCamera.SetActive(false);
     }
 }

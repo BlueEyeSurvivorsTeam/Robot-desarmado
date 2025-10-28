@@ -56,12 +56,12 @@ public class JumpController : MonoBehaviour
     }
     void Separate()
     {
-        if(!RobotState.Instance.isSeparate)
+        if (!RobotState.Instance.isSeparate)
         {
-            if(GetComponent<RobotChangeParts>())
+            if (GetComponent<RobotChangeParts>())
             {
                 RobotChangeParts robot = GetComponent<RobotChangeParts>();
-                robot.ChangePart(robot.torso, true, true, robot.legs, Vector3.down - Vector3.left, 1, 0, this.gameObject);
+                robot.ChangePart(robot.torso, true, true, robot.legs, Vector3.down + (-transform.forward), 1, 0, this.gameObject);
                 Jump();
             }
         }
