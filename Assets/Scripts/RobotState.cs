@@ -8,13 +8,14 @@ public class RobotState : MonoBehaviour
 {
     public static RobotState Instance;
     [Header("Override Controllers")]
-    public AnimatorOverrideController robot;
-    public AnimatorOverrideController legs;
+    public AnimatorOverrideController robotWithRocket;
+    public AnimatorOverrideController robotWithProyectile;
     public AnimatorOverrideController torso;
 
     [Header("Estados")]
     public bool hasLeftArm = true;
     public bool hasRightArm = true;
+    public bool hasLegs = true;
     public bool isSeparate = false;
 
     public GameObject currentTarget;
@@ -40,17 +41,20 @@ public class RobotState : MonoBehaviour
             JumpController jc = parts[i].GetComponent<JumpController>();
             RotateController rc = parts[i].GetComponent<RotateController>();
             MoveController mc = parts[i].GetComponent<MoveController>();
+            Rigidbody rb = parts[i].GetComponent<Rigidbody>();
             if (parts[i] == currentTarget)
             {
                 if (jc != null) jc.canJump = true;
                 if (rc != null) rc.canRotate = true;
                 if (mc != null) mc.canMove = true; mc.canRun = true;
+                if (rb != null) rb.constraints = RigidbodyConstraints.FreezeRotation;
             }
             else
             {
                 if (jc != null) jc.canJump = false;
                 if (rc != null) rc.canRotate = false;
                 if (mc != null) mc.canMove = false; mc.canRun = false;
+                if (rb != null) rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             }
         }
     }

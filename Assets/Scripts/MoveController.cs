@@ -98,14 +98,4 @@ public class MoveController : MonoBehaviour
             transform.Rotate(0f, rotationAmount, 0f);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-
-    }
 }

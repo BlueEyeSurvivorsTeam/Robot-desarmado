@@ -8,10 +8,12 @@ public class JumpController : MonoBehaviour
     public bool isJumping { get; private set; }
     public JumpDetector jumpDetector;
     Rigidbody rb;
+    RobotChangeParts robot;
     int jumpBuffer = 0;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        robot = GetComponent<RobotChangeParts>();
     }
 
     void Update()
@@ -39,7 +41,7 @@ public class JumpController : MonoBehaviour
     }
     void GetInput()
     {
-        if (Input.GetKeyDown(jumpKey) && isJumping && !jumpDetector.IsGrounded())
+        if (Input.GetKeyDown(jumpKey) && isJumping && !jumpDetector.IsGrounded() && RobotState.Instance.hasLeftArm && RobotState.Instance.hasRightArm)
         {
             Separate();
         }
@@ -58,21 +60,19 @@ public class JumpController : MonoBehaviour
     {
         if (!RobotState.Instance.isSeparate)
         {
-            if (GetComponent<RobotChangeParts>())
+            if (robot)
             {
-                RobotChangeParts robot = GetComponent<RobotChangeParts>();
-                robot.ChangePart(robot.torso, true, true, robot.legs, Vector3.down + (-transform.forward), 1, 0, this.gameObject);
+                robot.ChangePart(robot.torso, true, true, robot.legs, robot.legsPoint, Vector3.down + (-transform.forward), robot.playerCam, this.gameObject);
                 Jump();
             }
         }
     }
     void UnitOnJump()
     {
-        if (GetComponent<RobotChangeParts>())
+        if (robot)
         {
-            RobotChangeParts robot = GetComponent<RobotChangeParts>();
             transform.position = robot.legs.transform.position;
-            robot.ChangePart(robot.robot, false, false, robot.legs, Vector3.zero, 1, 0, this.gameObject);
+            robot.ChangePart(robot.robotWithRocket, false, false, robot.legs, robot.legsPoint, Vector3.zero, robot.playerCam, this.gameObject);
         }
     }
 }

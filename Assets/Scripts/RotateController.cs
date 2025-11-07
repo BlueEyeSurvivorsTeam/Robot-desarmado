@@ -1,5 +1,3 @@
-using Unity.IntegerTime;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class RotateController : MonoBehaviour
@@ -22,17 +20,22 @@ public class RotateController : MonoBehaviour
     {
         if(Input.GetKeyDown(resetKey))
         {
-            playerPivot.transform.localRotation = Quaternion.identity;
-            cameraPivot.transform.rotation = playerPivot.transform.rotation;
+            ResetRotation();
         }
     }
     void RotatePlayer()
     {
-        if (Input.mousePositionDelta != Vector3.zero)
+        Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if (mouseDelta != Vector2.zero)
         {
-            float rotationAmount = Input.mousePositionDelta.x * rotationSpeed * Time.deltaTime;
+            float rotationAmount = mouseDelta.x * rotationSpeed * Time.deltaTime;
             playerPivot.transform.Rotate(0f, 0f, rotationAmount);
             cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
         }
+    }
+    public void ResetRotation()
+    {
+        playerPivot.transform.localRotation = Quaternion.identity;
+        cameraPivot.transform.rotation = playerPivot.transform.rotation;
     }
 }

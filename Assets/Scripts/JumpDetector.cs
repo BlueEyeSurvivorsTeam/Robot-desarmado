@@ -9,7 +9,10 @@ public class JumpDetector : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        isGrounded = true;
+        if (other.CompareTag("Ground") || other.GetComponentInParent<MoveController>())
+        {
+            isGrounded = true;
+        }
     }
     void OnTriggerStay(Collider other)
     {
@@ -24,7 +27,10 @@ public class JumpDetector : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        isGrounded = false;
+        if(other.CompareTag("Ground") || other.GetComponentInParent<MoveController>())
+        {
+            isGrounded = false;
+        }
         if (other.GetComponentInParent<MoveController>())
         {
             touchPlayer = false;
