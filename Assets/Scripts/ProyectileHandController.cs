@@ -1,11 +1,14 @@
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ProyectileHandController : MonoBehaviour
 {
     public float rotationSpeed = 100f;
     public float force = 10f;
     public bool canShoot;
-    public RotateController rc;
+    public GameObject playerPivot;
+    public GameObject cameraPivot;
     public GameObject originalHand;
     public ProyectileHand proyectileHand;
     public KeyCode aimKey = KeyCode.Mouse1;
@@ -37,7 +40,6 @@ public class ProyectileHandController : MonoBehaviour
     {
         if (Input.GetKeyDown(aimKey) && !isAiming)
         {
-            rc.ResetRotation();
             isAiming = true;
             lineRenderer.enabled = true;
             robot.ChangePart(robot.robotWithProyectile, false, false, robot.proyectileHand, robot.proyectileHandPoint, Vector3.zero, robot.playerCam, robot.proyectileHand);
@@ -66,6 +68,7 @@ public class ProyectileHandController : MonoBehaviour
         if (isAiming)
         {
             DrawTrayectory();
+            RotatePlayer();
         }
     }
 
@@ -75,11 +78,24 @@ public class ProyectileHandController : MonoBehaviour
         robot.ChangePart(robot.playerCam, this.gameObject);
     }
 
+    public void RotatePlayer()
+    {
+        if (Input.mousePositionDelta != Vector3.zero)
+        {
+            float rotationAmount = Input.mousePositionDelta.x * rotationSpeed * Time.deltaTime;
+            playerPivot.transform.Rotate(0f, 0f, rotationAmount);
+            cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
+            float rotationAmountY = Input.mousePositionDelta.y * rotationSpeed * Time.deltaTime;
+            robot.proyectileHandPoint.transform.Rotate(rotationAmountY, 0f,0f);
+            
+        }
+    }
+
     void DrawTrayectory()
     { 
         lineRenderer.enabled = true;
         lineRenderer.positionCount = linePoints;
-        Vector3 startPosition = robot.proyectileHand.transform.localPosition;
+        Vector3 startPosition = robot.proyectileHand.transform.position;
         Vector3 startVelocity = force * robot.proyectileHand.transform.forward / proyectileHand.GetComponent<Rigidbody>().mass;
 
         for (int i = 0; i < linePoints; i++)

@@ -1312,7 +1312,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
 --- !u!1 &1555072567303870954
@@ -2554,7 +2554,8 @@ MonoBehaviour:
   rotationSpeed: 100
   force: 5
   canShoot: 1
-  rc: {fileID: 5297200563797979011}
+  playerPivot: {fileID: 9038432664809002467}
+  cameraPivot: {fileID: 3873627234215466470}
   originalHand: {fileID: 7612901228596968205}
   proyectileHand: {fileID: 6715724542577014922}
   aimKey: 324
