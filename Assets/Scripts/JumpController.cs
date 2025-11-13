@@ -18,6 +18,7 @@ public class JumpController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         if (canJump)
         {
             GetInput();
@@ -41,7 +42,7 @@ public class JumpController : MonoBehaviour
     }
     void GetInput()
     {
-        if (Input.GetKeyDown(jumpKey) && isJumping && !jumpDetector.IsGrounded() && RobotState.Instance.hasLeftArm && RobotState.Instance.hasRightArm)
+        if (Input.GetKeyDown(jumpKey) && isJumping && !jumpDetector.IsGrounded() && RobotState.Instance.hasLeftArm && RobotState.Instance.hasRightArm && robot.canSeparate)
         {
             Separate();
         }

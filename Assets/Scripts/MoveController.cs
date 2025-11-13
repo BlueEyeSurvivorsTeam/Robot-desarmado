@@ -30,6 +30,7 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         GetInput();
     }
 
@@ -92,7 +93,7 @@ public class MoveController : MonoBehaviour
 
     void RotatePlayer()
     {
-        if (Mathf.Abs(rotationInput) > 0.1f && currentAnimSpeed != 0)
+        if (Mathf.Abs(rotationInput) > 0.1f)
         {
             float rotationAmount = rotationInput * rotationSpeed * Time.deltaTime;
             transform.Rotate(0f, rotationAmount, 0f);

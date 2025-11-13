@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 158291241138369300}
   serializedVersion: 2
   m_LocalRotation: {x: -0.23461284, y: 0.0000000842937, z: -0.000000021073426, w: 0.97208893}
-  m_LocalPosition: {x: -4.656755e-10, y: 0.03710556, z: -1.0191805}
+  m_LocalPosition: {x: 0.28200004, y: -0.012894392, z: -0.71918046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 2969971307000899465}
   m_Layer: 3
   m_Name: ProyectileHand
-  m_TagString: Untagged
+  m_TagString: ProyectileHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2136,7 +2136,7 @@ Transform:
   m_GameObject: {fileID: 2429721736193539521}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0025, y: -0.003, z: -0.0005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2449,6 +2449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca096a76c8d59e846a6059a028aafd2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canSeparate: 1
   animPlayer: {fileID: 3849278851742798592}
   partDetector: {fileID: 2557603079489455529}
   robotWithRocket: {fileID: 22100000, guid: c4cc95afdd38d9b428ca7d9eef4d4d75, type: 2}
@@ -2552,7 +2553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  force: 5
+  speedChangeForce: 3
+  maxForce: 10
+  minForce: 5
   canShoot: 1
   playerPivot: {fileID: 9038432664809002467}
   cameraPivot: {fileID: 3873627234215466470}
@@ -4044,7 +4047,7 @@ GameObject:
   - component: {fileID: 9041151180400937189}
   m_Layer: 3
   m_Name: Legs
-  m_TagString: Player
+  m_TagString: Legs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4696,7 +4699,7 @@ GameObject:
   - component: {fileID: 1709577972571334037}
   m_Layer: 3
   m_Name: RocketHand
-  m_TagString: Untagged
+  m_TagString: RocketHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

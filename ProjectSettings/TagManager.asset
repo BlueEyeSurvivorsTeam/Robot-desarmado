@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Legs
+  - ProyectileHand
+  - RocketHand
   layers:
   - Default
   - TransparentFX

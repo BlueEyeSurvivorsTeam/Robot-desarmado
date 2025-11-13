@@ -21,7 +21,8 @@ public class RocketHandController : MonoBehaviour
     }
     private void Update()
     {
-        if(canShoot && !isShooting && state.hasRightArm && state.currentTarget == rocketHand.gameObject && !state.isSeparate)
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
+        if (canShoot && !isShooting && state.hasRightArm && state.currentTarget == rocketHand.gameObject && !state.isSeparate)
         {
             GetInput();
         }

@@ -10,6 +10,7 @@ public class RotateController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         if (canRotate)
         {
             GetInput();

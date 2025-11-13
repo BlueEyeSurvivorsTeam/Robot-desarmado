@@ -23,7 +23,7 @@ public class VolumeController : MonoBehaviour
     }
     private void SetButtonSound()
     {
-        AudioManager.Instance.PlaySFX(buttonSound);
+        if(buttonSound != null) AudioManager.Instance.PlaySFX(buttonSound);
     }
     private void SetMusicVolume(float volume)
     {

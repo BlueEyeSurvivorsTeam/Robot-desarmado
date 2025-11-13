@@ -15,10 +15,12 @@ public class RocketHand : MonoBehaviour
     }
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         GetInput();
     }
     private void FixedUpdate()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         rb.linearVelocity = transform.forward * moveSpeed;
         Rotate();
     }

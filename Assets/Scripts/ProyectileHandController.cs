@@ -5,7 +5,10 @@ using UnityEngine.AI;
 public class ProyectileHandController : MonoBehaviour
 {
     public float rotationSpeed = 100f;
-    public float force = 10f;
+    public float speedChangeForce = 3f;
+    public float maxForce = 10f;
+    public float minForce = 5f;
+    float force;
     public bool canShoot;
     public GameObject playerPivot;
     public GameObject cameraPivot;
@@ -14,7 +17,7 @@ public class ProyectileHandController : MonoBehaviour
     public KeyCode aimKey = KeyCode.Mouse1;
     public KeyCode shootKey = KeyCode.Mouse0;
     public LineRenderer lineRenderer;
-    [Range(10, 100)] public int linePoints = 175;
+    [Range(10, 200)] public int linePoints = 175;
     [Range(0.01f, 0.25f)] public float timeIntervalInPoints = 0.01f;
     public LayerMask collisionMask;
     public bool isShooting { get; private set; }
@@ -24,12 +27,14 @@ public class ProyectileHandController : MonoBehaviour
 
     void Start()
     {
+        force = maxForce;
         robot = GetComponent<RobotChangeParts>();
         state = RobotState.Instance;
     }
 
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         if (canShoot && !isShooting && state.hasLeftArm && state.currentTarget == proyectileHand.gameObject && !state.isSeparate)
         {
             GetInput();
@@ -69,6 +74,7 @@ public class ProyectileHandController : MonoBehaviour
         {
             DrawTrayectory();
             RotatePlayer();
+            ChangeForce();
         }
     }
 
@@ -86,9 +92,21 @@ public class ProyectileHandController : MonoBehaviour
             playerPivot.transform.Rotate(0f, 0f, rotationAmount);
             cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
             float rotationAmountY = Input.mousePositionDelta.y * rotationSpeed * Time.deltaTime;
-            robot.proyectileHandPoint.transform.Rotate(rotationAmountY, 0f,0f);
-            
+            Vector3 currentRotation = robot.proyectileHandPoint.transform.localEulerAngles;
+            float newX = currentRotation.x - rotationAmountY;
+
+            if (newX > 180) newX -= 360;
+
+            newX = Mathf.Clamp(newX, 0f, 90f);
+
+            robot.proyectileHandPoint.transform.localEulerAngles = new Vector3(newX, currentRotation.y, currentRotation.z);
+
         }
+    }
+    public void ChangeForce()
+    {
+        force += speedChangeForce * Input.GetAxis("Vertical") * Time.deltaTime;
+        force = Mathf.Clamp(force, minForce, maxForce);
     }
 
     void DrawTrayectory()

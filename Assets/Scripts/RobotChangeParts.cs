@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RobotChangeParts : MonoBehaviour
 {
+    public bool canSeparate = true;
     [Header("Referencias")]
     public Animator animPlayer;
     public PartDetector partDetector;
@@ -43,6 +44,7 @@ public class RobotChangeParts : MonoBehaviour
     }
     private void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
         GetInput();
     }
 
@@ -52,22 +54,22 @@ public class RobotChangeParts : MonoBehaviour
         {
             if(state.isSeparate)
             {
-                if(Input.GetKeyDown(KeyCode.Alpha1) && (state.hasLeftArm || state.hasRightArm))
+                if(Input.GetKeyDown(KeyCode.Alpha1) && state.hasLeftArm && state.hasRightArm)
                 {
                     ChangePart(playerCam, this.gameObject);
                 }
-                else if(Input.GetKeyDown(KeyCode.Alpha2) && state.isSeparate)
+                else if(Input.GetKeyDown(KeyCode.Alpha2) && state.isSeparate && state.hasLegs)
                 {
                     ChangePart(legsCam, legs);
                 }
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1) && state.hasLeftArm && state.hasRightArm)
+                if (Input.GetKeyDown(KeyCode.Alpha1) && state.hasLeftArm && state.hasRightArm && canSeparate)
                 {
                     ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), playerCam, this.gameObject);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha2) && state.hasLeftArm && state.hasRightArm)
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && state.hasLeftArm && state.hasRightArm && canSeparate)
                 {
                     ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), legsCam, legs);
                 }
@@ -141,7 +143,8 @@ public class RobotChangeParts : MonoBehaviour
     {
         if(piece == PieceType.Legs)
         {
-
+            state.hasLegs = true;
+            ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), playerCam, this.gameObject);
         }
         else if(piece == PieceType.LeftArm)
         {
