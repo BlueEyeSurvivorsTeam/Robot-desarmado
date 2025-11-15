@@ -39,8 +39,11 @@ public class RocketHand : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        rhc.LoseHand();
-        this.gameObject.SetActive(false);
+        if(!collision.gameObject.CompareTag("Player"))
+        {
+            rhc.LoseHand();
+            this.gameObject.SetActive(false);
+        }
     }
     public void SetRHC(RocketHandController rhcontroller)
     {

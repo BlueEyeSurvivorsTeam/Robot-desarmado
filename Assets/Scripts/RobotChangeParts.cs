@@ -50,6 +50,10 @@ public class RobotChangeParts : MonoBehaviour
 
     void GetInput()
     {
+        if(Input.GetKeyDown(changePartButton))
+        {
+            ChangePart(playerCam, this.gameObject);
+        }
         if (Input.GetKey(changePartButton))
         {
             if(state.isSeparate)
@@ -78,10 +82,14 @@ public class RobotChangeParts : MonoBehaviour
                     ChangePart(robotWithRocket, false, false, rocketHand, rocketHandPoint, Vector3.zero, playerCam, this.gameObject);
                     state.currentTarget = rocketHand;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha4) && state.hasLeftArm)
+                else if (Input.GetKeyDown(KeyCode.Alpha4) && !proyectileHand.activeInHierarchy)
                 {
                     ChangePart(robotWithProyectile, false, false, proyectileHand, proyectileHandPoint, Vector3.zero, playerCam, this.gameObject);
                     state.currentTarget = proyectileHand;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha4) && proyectileHand.activeInHierarchy)
+                {
+                    ChangePart(proyectileCam, proyectileHand);
                 }
             }
         }   

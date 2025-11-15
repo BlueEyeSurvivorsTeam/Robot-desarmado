@@ -8,6 +8,7 @@ TagManager:
   - Legs
   - ProyectileHand
   - RocketHand
+  - PressurePlate
   layers:
   - Default
   - TransparentFX
