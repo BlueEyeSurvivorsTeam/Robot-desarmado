@@ -13,12 +13,15 @@ public class MoveController : MonoBehaviour
     [Header("Acciones")]
     public bool canMove;
     public bool canRun;
+
+    public RotateController rotateController;
     private bool isMovingForward = false;
     private bool isMovingBackward = false;
     private Vector3 inputDirection;
     private float rotationInput;
     private float currentSpeed;
     private float currentMovementSpeed;
+    private bool initialMove;
     public float currentAnimSpeed { get; private set; }
     private Rigidbody rb;
 
@@ -88,6 +91,20 @@ public class MoveController : MonoBehaviour
     void MovePlayer()
     {
         Vector3 moveVelocity = inputDirection * currentMovementSpeed;
+        if(moveVelocity != Vector3.zero)
+        {
+            if(Vector3.Angle(transform.forward, -rotateController.playerPivot.transform.up) > 45f && initialMove == false)
+            {
+                initialMove = true;
+                Vector3 current = rotateController.playerPivot.transform.localEulerAngles;
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + current.z, transform.eulerAngles.z);
+                rotateController.ResetRotation();
+            }
+        }
+        else
+        {
+            initialMove = false;
+        }
         rb.linearVelocity = new Vector3(moveVelocity.x, rb.linearVelocity.y, moveVelocity.z);
     }
 

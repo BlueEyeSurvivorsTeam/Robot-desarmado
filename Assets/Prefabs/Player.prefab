@@ -2551,6 +2551,7 @@ MonoBehaviour:
   runKey: 304
   canMove: 1
   canRun: 1
+  rotateController: {fileID: 5297200563797979011}
 --- !u!114 &5297200563797979011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4216,6 +4217,7 @@ MonoBehaviour:
   runKey: 304
   canMove: 1
   canRun: 1
+  rotateController: {fileID: 0}
 --- !u!114 &3682470401851303980
 MonoBehaviour:
   m_ObjectHideFlags: 0
