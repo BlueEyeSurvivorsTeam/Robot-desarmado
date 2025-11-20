@@ -1569,6 +1569,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1249620703}
     m_Modifications:
+    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
+    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: m_Name
+      value: Pressure Plate (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4399925876501370775, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.9863825
@@ -1609,14 +1617,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: m_Name
-      value: Pressure Plate (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
     - target: {fileID: 9133068041366406458, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2734,6 +2734,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1472880707}
     m_Modifications:
+    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
+    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: m_Name
+      value: Pressure Plate
+      objectReference: {fileID: 0}
     - target: {fileID: 4399925876501370775, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.051
@@ -2774,14 +2782,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: m_Name
-      value: Pressure Plate
-      objectReference: {fileID: 0}
-    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
     - target: {fileID: 9133068041366406458, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10688,6 +10688,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1249620703}
     m_Modifications:
+    - target: {fileID: 4764849679883809638, guid: 65467f6b70ddf5e4890bd9f317b3a5b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6778069794998177060, guid: 65467f6b70ddf5e4890bd9f317b3a5b7, type: 3}
       propertyPath: m_Name
       value: Catwalk Stairs
@@ -14369,6 +14373,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1249620703}
     m_Modifications:
+    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
+    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: m_Name
+      value: Pressure Plate
+      objectReference: {fileID: 0}
     - target: {fileID: 4399925876501370775, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1602178
@@ -14409,14 +14421,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: m_Name
-      value: Pressure Plate
-      objectReference: {fileID: 0}
-    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
     - target: {fileID: 9133068041366406458, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -23263,6 +23267,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 293143619}
     m_Modifications:
+    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
+    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
+      propertyPath: m_Name
+      value: Pressure Plate
+      objectReference: {fileID: 0}
     - target: {fileID: 4399925876501370775, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.858
@@ -23303,14 +23315,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3910388817224895789, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: m_Name
-      value: Pressure Plate
-      objectReference: {fileID: 0}
-    - target: {fileID: 206123169992789809, guid: 512667145381668498e7fec3170ef656, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 994fbacbca65a574aa6b39835a02773d, type: 2}
     - target: {fileID: 9133068041366406458, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
