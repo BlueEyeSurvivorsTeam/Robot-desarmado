@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1528242648844378714}
   m_Layer: 0
   m_Name: Pallet Variation 02
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

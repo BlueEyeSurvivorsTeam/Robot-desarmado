@@ -367,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7515332717815086903}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Catwalk Stairs
   m_TagString: Ground
   m_Icon: {fileID: 0}

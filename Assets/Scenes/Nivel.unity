@@ -2703,6 +2703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cajas en Rack
       objectReference: {fileID: 0}
+    - target: {fileID: 6322293293382533815, guid: 6a5c16a0f5846e14c93d34b39c6d5221, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8921845948236308535, guid: 6a5c16a0f5846e14c93d34b39c6d5221, type: 3}
@@ -27404,6 +27408,10 @@ PrefabInstance:
     - target: {fileID: 6778069794998177060, guid: 65467f6b70ddf5e4890bd9f317b3a5b7, type: 3}
       propertyPath: m_Name
       value: Catwalk Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778069794998177060, guid: 65467f6b70ddf5e4890bd9f317b3a5b7, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7515332717815086903, guid: 65467f6b70ddf5e4890bd9f317b3a5b7, type: 3}
       propertyPath: m_LocalPosition.x
