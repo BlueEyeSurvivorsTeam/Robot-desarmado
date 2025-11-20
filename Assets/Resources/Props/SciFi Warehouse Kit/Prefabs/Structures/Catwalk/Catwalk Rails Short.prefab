@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1081409944546234434}
   - component: {fileID: 6646602723570166971}
   - component: {fileID: 6596534231319726901}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Catwalk Rails Short
   m_TagString: Ground
   m_Icon: {fileID: 0}

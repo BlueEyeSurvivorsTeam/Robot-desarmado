@@ -2514,7 +2514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSeparate: 1
   animPlayer: {fileID: 3849278851742798592}
-  partDetector: {fileID: 0}
   robotWithRocket: {fileID: 22100000, guid: c4cc95afdd38d9b428ca7d9eef4d4d75, type: 2}
   robotWithProyectile: {fileID: 22100000, guid: 3d77994bd76e45e4fb4d64eb3e1740fa, type: 2}
   torso: {fileID: 22100000, guid: 1652ab469940d2843a22fbaf4dba5d93, type: 2}
@@ -2667,7 +2666,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4252514522234642623}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a792e8280424c074faad2b8857012cf6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2679,8 +2678,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9261168, y: 1.7271476, z: 0.48453996}
-  m_Center: {x: 1.9235073e-17, y: 0.30617344, z: 0.005259797}
+  m_Size: {x: 0.72419065, y: 1.6827041, z: 0.48453996}
+  m_Center: {x: -0.011315584, y: 0.2839517, z: 0.005259797}
 --- !u!1 &4489901013294019958
 GameObject:
   m_ObjectHideFlags: 0

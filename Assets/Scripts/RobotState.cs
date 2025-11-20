@@ -18,6 +18,8 @@ public class RobotState : MonoBehaviour
     public bool hasLegs = true;
     public bool isSeparate = false;
 
+    public PhysicsMaterial staticMat;
+    public PhysicsMaterial moveMat;
     public GameObject currentTarget;
     private List<GameObject> parts = new List<GameObject>();
     private void Awake()
@@ -42,12 +44,14 @@ public class RobotState : MonoBehaviour
             RotateController rc = parts[i].GetComponent<RotateController>();
             MoveController mc = parts[i].GetComponent<MoveController>();
             Rigidbody rb = parts[i].GetComponent<Rigidbody>();
+            Collider c = parts[i].GetComponent<Collider>();
             if (parts[i] == currentTarget)
             {
                 if (jc != null) jc.canJump = true;
                 if (rc != null) rc.canRotate = true;
                 if (mc != null) mc.canMove = true; mc.canRun = true;
                 if (rb != null) rb.constraints = RigidbodyConstraints.FreezeRotation;
+                if (c != null) c.material = moveMat;
             }
             else
             {
@@ -55,6 +59,7 @@ public class RobotState : MonoBehaviour
                 if (rc != null) rc.canRotate = false;
                 if (mc != null) mc.canMove = false; mc.canRun = false;
                 if (rb != null) rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                if (c != null) c.material = staticMat;
             }
         }
     }

@@ -7,7 +7,6 @@ public class RobotChangeParts : MonoBehaviour
     public bool canSeparate = true;
     [Header("Referencias")]
     public Animator animPlayer;
-    public PartDetector partDetector;
 
     [Header("Override Controllers")]
     public AnimatorOverrideController robotWithRocket;

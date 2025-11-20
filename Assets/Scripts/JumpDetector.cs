@@ -5,7 +5,6 @@ public class JumpDetector : MonoBehaviour
 {
     public JumpController jc;
 
-    bool isGrounded;
     bool touchPlayer;
 
     private HashSet<Collider> groundColliders = new HashSet<Collider>();
@@ -15,7 +14,6 @@ public class JumpDetector : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             groundColliders.Add(other);
-            isGrounded = true;
         }
     }
 
@@ -36,9 +34,6 @@ public class JumpDetector : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             groundColliders.Remove(other);
-
-            if (groundColliders.Count == 0)
-                isGrounded = false;
         }
 
         if (other.GetComponentInParent<MoveController>())
