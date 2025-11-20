@@ -18,7 +18,6 @@ public class MoveController : MonoBehaviour
     private bool isMovingForward = false;
     private bool isMovingBackward = false;
     private Vector3 inputDirection;
-    private float rotationInput;
     private float currentSpeed;
     private float currentMovementSpeed;
     private bool initialMove;
@@ -42,7 +41,6 @@ public class MoveController : MonoBehaviour
         if(canMove)
         {
             MovePlayer();
-            RotatePlayer();
         }
     }
 
@@ -59,7 +57,6 @@ public class MoveController : MonoBehaviour
                 currentSpeed = moveSpeed;
             }
         }
-        float rotateInput = Input.GetAxis("Horizontal");
         float moveInput = Input.GetAxis("Vertical");
         isMovingForward = moveInput > 0.1f;
         isMovingBackward = moveInput < -0.1f;
@@ -84,8 +81,6 @@ public class MoveController : MonoBehaviour
 
         float targetMovementSpeed = Mathf.Abs(moveInput) > 0.1f ? Mathf.Abs(moveSpeed) : 0f;
         currentMovementSpeed = Mathf.MoveTowards(currentSpeed, targetMovementSpeed, acceleration * Time.deltaTime);
-
-        rotationInput = rotateInput;
     }
 
     void MovePlayer()
@@ -93,7 +88,7 @@ public class MoveController : MonoBehaviour
         Vector3 moveVelocity = inputDirection * currentMovementSpeed;
         if(moveVelocity != Vector3.zero)
         {
-            if(Vector3.Angle(transform.forward, -rotateController.playerPivot.transform.up) > 45f && initialMove == false)
+            if(initialMove == false)
             {
                 initialMove = true;
                 Vector3 current = rotateController.playerPivot.transform.localEulerAngles;
@@ -106,14 +101,5 @@ public class MoveController : MonoBehaviour
             initialMove = false;
         }
         rb.linearVelocity = new Vector3(moveVelocity.x, rb.linearVelocity.y, moveVelocity.z);
-    }
-
-    void RotatePlayer()
-    {
-        if (Mathf.Abs(rotationInput) > 0.1f)
-        {
-            float rotationAmount = rotationInput * rotationSpeed * Time.deltaTime;
-            transform.Rotate(0f, rotationAmount, 0f);
-        }
     }
 }

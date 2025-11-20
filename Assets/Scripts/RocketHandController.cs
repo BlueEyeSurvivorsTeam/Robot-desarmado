@@ -71,4 +71,8 @@ public class RocketHandController : MonoBehaviour
         isShooting = false;
         robot.ChangePart(robot.robotWithRocket, false, false, robot.rocketHand, robot.rocketHandPoint, Vector3.zero, robot.playerCam, this.gameObject);
     }
+    public void SetCanShoot(bool boolean)
+    {
+        canShoot = boolean;
+    }
 }

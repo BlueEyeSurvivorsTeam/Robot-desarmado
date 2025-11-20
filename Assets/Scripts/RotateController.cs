@@ -27,11 +27,19 @@ public class RotateController : MonoBehaviour
     void RotatePlayer()
     {
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (mouseDelta != Vector2.zero)
         {
             float rotationAmount = mouseDelta.x * rotationSpeed * Time.deltaTime;
-            playerPivot.transform.Rotate(0f, 0f, rotationAmount);
-            cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
+            if(moveInput != Vector2.zero)
+            {
+                transform.Rotate(0f, rotationAmount, 0f);
+            }
+            else
+            {
+                playerPivot.transform.Rotate(0f, 0f, rotationAmount);
+                cameraPivot.transform.Rotate(0f, 0f, rotationAmount);
+            }
         }
     }
     public void ResetRotation()

@@ -1,19 +1,24 @@
-using NUnit.Framework.Internal.Commands;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class JumpDetector : MonoBehaviour
 {
     public JumpController jc;
+
     bool isGrounded;
     bool touchPlayer;
 
+    private HashSet<Collider> groundColliders = new HashSet<Collider>();
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ground") || other.GetComponentInParent<MoveController>())
+        if (other.CompareTag("Ground"))
         {
+            groundColliders.Add(other);
             isGrounded = true;
         }
     }
+
     void OnTriggerStay(Collider other)
     {
         if (other.GetComponentInParent<MoveController>())
@@ -25,21 +30,28 @@ public class JumpDetector : MonoBehaviour
             touchPlayer = false;
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Ground") || other.GetComponentInParent<MoveController>())
+        if (other.CompareTag("Ground"))
         {
-            isGrounded = false;
+            groundColliders.Remove(other);
+
+            if (groundColliders.Count == 0)
+                isGrounded = false;
         }
+
         if (other.GetComponentInParent<MoveController>())
         {
             touchPlayer = false;
         }
     }
+
     public bool IsGrounded()
     {
-        return isGrounded;
+        return groundColliders.Count > 0;
     }
+
     public bool TouchPlayer()
     {
         return touchPlayer;

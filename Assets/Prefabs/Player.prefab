@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6264179561736018582}
   - component: {fileID: 4774747754927937414}
   - component: {fileID: 3525374737195717636}
-  - component: {fileID: 2735512928901501389}
   - component: {fileID: 6255817817995202357}
+  - component: {fileID: 2735512928901501389}
   - component: {fileID: 8577014658707893552}
   m_Layer: 3
   m_Name: ProyectileHandCamera
@@ -98,6 +98,40 @@ MonoBehaviour:
     RotationDamping: {x: 0, y: 0, z: 0}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0.3, z: -1}
+--- !u!114 &6255817817995202357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158291241138369300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d54399b04b4fa48a73e121d4937dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReferenceFrame: 3
+  RecenterTarget: 2
+  PanAxis:
+    Value: -180
+    Center: 0
+    Range: {x: -180, y: 180}
+    Wrap: 1
+    Recentering:
+      Enabled: 0
+      Wait: 1
+      Time: 2
+    Restrictions: 0
+  TiltAxis:
+    Value: 0
+    Center: 0
+    Range: {x: -70, y: 70}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 1
+      Time: 2
+    Restrictions: 0
 --- !u!114 &2735512928901501389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,40 +171,6 @@ MonoBehaviour:
     NearLimit: 5
     FarLimit: 30
     MaxQualityBoost: 0.2
---- !u!114 &6255817817995202357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158291241138369300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d54399b04b4fa48a73e121d4937dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReferenceFrame: 3
-  RecenterTarget: 2
-  PanAxis:
-    Value: -180
-    Center: 0
-    Range: {x: -180, y: 180}
-    Wrap: 1
-    Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
-    Restrictions: 0
-  TiltAxis:
-    Value: 0
-    Center: 0
-    Range: {x: -70, y: 70}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 1
-      Time: 2
-    Restrictions: 0
 --- !u!114 &8577014658707893552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395787259508455895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.72373104, y: -0.0343834, z: -0.03270724, w: 0.68844867}
+  m_LocalRotation: {x: 0.11530975, y: -0.005478163, z: -0.047137868, w: 0.99219537}
   m_LocalPosition: {x: -0.18401973, y: 1.1562866, z: 0.28542012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2492,7 +2492,6 @@ Transform:
   - {fileID: 688315846342511685}
   - {fileID: 7709041663568732676}
   - {fileID: 1290582676789345948}
-  - {fileID: 6529063626460008010}
   - {fileID: 7574698937434339410}
   - {fileID: 4271825934391438448}
   - {fileID: 9120750121789794048}
@@ -2515,7 +2514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSeparate: 1
   animPlayer: {fileID: 3849278851742798592}
-  partDetector: {fileID: 2557603079489455529}
+  partDetector: {fileID: 0}
   robotWithRocket: {fileID: 22100000, guid: c4cc95afdd38d9b428ca7d9eef4d4d75, type: 2}
   robotWithProyectile: {fileID: 22100000, guid: 3d77994bd76e45e4fb4d64eb3e1740fa, type: 2}
   torso: {fileID: 22100000, guid: 1652ab469940d2843a22fbaf4dba5d93, type: 2}
@@ -3470,7 +3469,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4, y: 0.05, z: 0.4}
+  m_Size: {x: 0.4, y: 0.1, z: 0.4}
   m_Center: {x: 0, y: -0.6, z: 0}
 --- !u!114 &7261850729072307481
 MonoBehaviour:
@@ -3636,72 +3635,6 @@ Transform:
   - {fileID: 5053018583652043318}
   m_Father: {fileID: 3174983785551161458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6379888330462866867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6529063626460008010}
-  - component: {fileID: 889948492544902397}
-  - component: {fileID: 2557603079489455529}
-  m_Layer: 3
-  m_Name: PartDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6529063626460008010
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6379888330462866867}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7186026453474782144}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &889948492544902397
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6379888330462866867}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2557603079489455529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6379888330462866867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19fedf3333a39254bae641cd46222984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6547979072166108243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4217,7 +4150,7 @@ MonoBehaviour:
   runKey: 304
   canMove: 1
   canRun: 1
-  rotateController: {fileID: 0}
+  rotateController: {fileID: 3682470401851303980}
 --- !u!114 &3682470401851303980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4234,7 +4167,7 @@ MonoBehaviour:
   playerPivot: {fileID: 8835660453051164867}
   cameraPivot: {fileID: 5573140368743111074}
   resetKey: 114
-  rotationSpeed: 10
+  rotationSpeed: 100
 --- !u!114 &7659783558760967945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4526,7 +4459,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.05, z: 0.5}
+  m_Size: {x: 0.5, y: 0.08, z: 0.5}
   m_Center: {x: 0, y: -0.55, z: 0}
 --- !u!114 &8999122291243569131
 MonoBehaviour:

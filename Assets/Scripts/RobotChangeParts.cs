@@ -190,4 +190,8 @@ public class RobotChangeParts : MonoBehaviour
             return false;
         }
     }
+    public void SetCanSeparate(bool boolean)
+    {
+        canSeparate = boolean;
+    }
 }

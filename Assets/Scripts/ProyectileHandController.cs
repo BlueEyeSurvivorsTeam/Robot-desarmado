@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -134,5 +135,9 @@ public class ProyectileHandController : MonoBehaviour
                 }
             }
         }
+    }
+    public void SetCanShoot(bool boolean)
+    {
+        canShoot = boolean;
     }
 }
