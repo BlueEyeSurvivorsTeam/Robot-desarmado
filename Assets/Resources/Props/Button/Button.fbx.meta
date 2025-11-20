@@ -3,7 +3,27 @@ guid: de115c6773858594a979d781030f71f1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 03b08a9789b8f2649aba760ffb831d24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button
+    second: {fileID: 2100000, guid: 3f4e2cd39e747604696b11ca1b8cbe7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ButtonBase
+    second: {fileID: 2100000, guid: e5bf64c3fe6a4c844ae8acf684fa2944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screw
+    second: {fileID: 2100000, guid: 7b61c190b3fb60d43a28066e8b1567b4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

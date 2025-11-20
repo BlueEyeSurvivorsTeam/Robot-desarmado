@@ -241,6 +241,8 @@ GameObject:
   - component: {fileID: 5373548578356056723}
   - component: {fileID: 4126540942203840812}
   - component: {fileID: 2640643192389348329}
+  - component: {fileID: 6980860140370433370}
+  - component: {fileID: 5773647524355704721}
   m_Layer: 6
   m_Name: LP_Door_Wall_snaps
   m_TagString: Untagged
@@ -335,5 +337,47 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3000087, y: 9.000004, z: 6.000003}
-  m_Center: {x: 0.0000032410026, y: 4.500002, z: 3.0000014}
+  m_Size: {x: 0.3000087, y: 6.898284, z: 6.000003}
+  m_Center: {x: 0.0000032484531, y: 5.550862, z: 3.0000014}
+--- !u!65 &6980860140370433370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194237580895595712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3000137, y: 3.1445036, z: 2.0828028}
+  m_Center: {x: 0.00000010430813, y: 0.5722749, z: 4.9586024}
+--- !u!65 &5773647524355704721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194237580895595712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3000137, y: 3.1445036, z: 2.0828028}
+  m_Center: {x: 0.00000010430813, y: 0.5722749, z: 1.07}
