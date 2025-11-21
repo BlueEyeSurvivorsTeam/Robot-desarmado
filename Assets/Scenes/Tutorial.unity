@@ -1217,8 +1217,8 @@ RectTransform:
   - {fileID: 1808316659}
   - {fileID: 1391097287}
   - {fileID: 1457360675}
-  - {fileID: 837223677}
   - {fileID: 2002659897}
+  - {fileID: 837223677}
   m_Father: {fileID: 297472753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -1288,8 +1288,8 @@ Camera:
   m_GameObject: {fileID: 446714860}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3000,6 +3000,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 555911376}
+        m_TargetAssemblyTypeName: TransitionController, Assembly-CSharp
+        m_MethodName: SetPause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &837223679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3914,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 1523233456748483504, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: enterEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1248668361}
+      objectReference: {fileID: 2084147928}
     - target: {fileID: 1523233456748483504, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: enterEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -3945,7 +3957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1523233456748483504, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: enterEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.Behaviour, UnityEngine
+      value: UnityEngine.Collider, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1523233456748483504, guid: 512667145381668498e7fec3170ef656, type: 3}
       propertyPath: enterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -4021,17 +4033,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4399925876501370775, guid: 512667145381668498e7fec3170ef656, type: 3}
   m_PrefabInstance: {fileID: 1248668359}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1248668361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1523233456748483504, guid: 512667145381668498e7fec3170ef656, type: 3}
-  m_PrefabInstance: {fileID: 1248668359}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d24921cb1a13e4482e5acf43dbe48d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1248668362 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2627558069421194391, guid: 512667145381668498e7fec3170ef656, type: 3}
@@ -6533,6 +6534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2d3f8a65e9ad142b7237e004bc70c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointPos: {fileID: 0}
 --- !u!4 &1937256930
 Transform:
   m_ObjectHideFlags: 0
@@ -7080,6 +7082,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 555911376}
+        m_TargetAssemblyTypeName: TransitionController, Assembly-CSharp
+        m_MethodName: SetPause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2002659899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7145,6 +7159,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4938184237280664282, guid: baea7dbed5389f24491d4ef56ccd9dae, type: 3}
+--- !u!65 &2084147928 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2209972214073279757, guid: 512667145381668498e7fec3170ef656, type: 3}
+  m_PrefabInstance: {fileID: 1248668359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2084528282
 PrefabInstance:
   m_ObjectHideFlags: 0
