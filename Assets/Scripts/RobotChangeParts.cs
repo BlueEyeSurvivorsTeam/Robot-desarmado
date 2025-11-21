@@ -57,7 +57,7 @@ public class RobotChangeParts : MonoBehaviour
         {
             if(state.isSeparate)
             {
-                if(Input.GetKeyDown(KeyCode.Alpha1) && state.hasLeftArm && state.hasRightArm)
+                if(Input.GetKeyDown(KeyCode.Alpha1) && state.hasProyectileHand && state.hasRocketHand)
                 {
                     ChangePart(playerCam, this.gameObject);
                 }
@@ -68,15 +68,15 @@ public class RobotChangeParts : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1) && state.hasLeftArm && state.hasRightArm && canSeparate)
+                if (Input.GetKeyDown(KeyCode.Alpha1) && state.hasProyectileHand && state.hasRocketHand && canSeparate)
                 {
                     ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), playerCam, this.gameObject);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha2) && state.hasLeftArm && state.hasRightArm && canSeparate)
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && state.hasProyectileHand && state.hasRocketHand && canSeparate)
                 {
                     ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), legsCam, legs);
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha3) && state.hasRightArm)
+                else if (Input.GetKeyDown(KeyCode.Alpha3) && state.hasRocketHand)
                 {
                     ChangePart(robotWithRocket, false, false, rocketHand, rocketHandPoint, Vector3.zero, playerCam, this.gameObject);
                     state.currentTarget = rocketHand;
@@ -153,11 +153,11 @@ public class RobotChangeParts : MonoBehaviour
             state.hasLegs = true;
             ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), playerCam, this.gameObject);
         }
-        else if(piece == PieceType.LeftArm)
+        else if(piece == PieceType.ProyectileHand)
         {
             ProyectileHandController phc = GetComponent<ProyectileHandController>();
             phc.originalHand.SetActive(true);
-            state.hasLeftArm = true;
+            state.hasProyectileHand = true;
             Take(proyectileHand, proyectileHandPoint);
         }
         else
@@ -166,7 +166,7 @@ public class RobotChangeParts : MonoBehaviour
             {
                 RocketHandController rhc = GetComponent<RocketHandController>();
                 rhc.originalHand.SetActive(true);
-                state.hasRightArm = true;
+                state.hasRocketHand = true;
             }
         }
     }
@@ -176,11 +176,11 @@ public class RobotChangeParts : MonoBehaviour
         {
             return true;
         }
-        else if (piece == PieceType.LeftArm && !state.hasLeftArm)
+        else if (piece == PieceType.ProyectileHand && !state.hasProyectileHand)
         {
             return true;
         }
-        else if (piece == PieceType.RightArm && !state.hasRightArm)
+        else if (piece == PieceType.RocketHand && !state.hasRocketHand)
         {
             return true;
         }

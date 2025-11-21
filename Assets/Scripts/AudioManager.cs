@@ -52,6 +52,10 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.pitch = Random.Range(0.9f, 1.1f);
     }
+    public void ResetPitch()
+    {
+        sfxSource.pitch = 1f;
+    }
     public void SetMusicVolume(float volumeValue)
     {
         musicSource.volume = volumeValue;

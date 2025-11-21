@@ -9,6 +9,7 @@ TagManager:
   - ProyectileHand
   - RocketHand
   - PressurePlate
+  - Breakable
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class ProyectileHand : MonoBehaviour
     ProyectileHandController phc;
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("PresurePlate"))
+        if(collision.collider.CompareTag("PressurePlate"))
         {
             phc.LoseHand();
             rb.linearVelocity = Vector3.zero;

@@ -97,9 +97,7 @@ GameObject:
   - component: {fileID: 4774342892620840573}
   - component: {fileID: 545029013770782355}
   - component: {fileID: 2090933175267194024}
-  - component: {fileID: 9207851331562573600}
-  - component: {fileID: 8628764266457687011}
-  - component: {fileID: 4916995761172275742}
+  - component: {fileID: 1756601287425885601}
   m_Layer: 6
   m_Name: LP_Bay_Door_Wall_snaps
   m_TagString: Untagged
@@ -175,8 +173,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9207851331562573600
-BoxCollider:
+--- !u!64 &1756601287425885601
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -193,51 +191,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.30000785, y: 9.000002, z: 6.000002}
-  m_Center: {x: 0.0000025182962, y: 4.5, z: 3.000001}
---- !u!65 &8628764266457687011
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647211758135124163}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.03, y: 0.97548676, z: 0.18999958}
-  m_Center: {x: 0.31, y: 0.35268706, z: 5.28}
---- !u!65 &4916995761172275742
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647211758135124163}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.03, y: 0.8800373, z: 0.18999994}
-  m_Center: {x: 0.31, y: 0.39753914, z: 0.7}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1b74ff2139ba6ea47803d0c80ee0702a, type: 3}
 --- !u!1 &2702167651921923441
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430841697005043554}
+  - component: {fileID: 6619364802992353276}
   m_Layer: 6
   m_Name: Wall BayDoor
   m_TagString: Untagged
@@ -272,6 +230,28 @@ Transform:
   - {fileID: 4774342892620840573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6619364802992353276
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702167651921923441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0264f0442137b14b894f0cf67d8de8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4975399993979019661
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +263,7 @@ GameObject:
   - component: {fileID: 6935417351677981081}
   - component: {fileID: 2283091757823601388}
   - component: {fileID: 9041195004258538045}
+  - component: {fileID: 6613801292183785329}
   m_Layer: 6
   m_Name: LP_Bay_Door_snaps
   m_TagString: Untagged
@@ -358,3 +339,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6613801292183785329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975399993979019661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2517905, y: 5.7053785, z: 4.908104}
+  m_Center: {x: 0.18667534, y: 2.350721, z: 3.0000775}

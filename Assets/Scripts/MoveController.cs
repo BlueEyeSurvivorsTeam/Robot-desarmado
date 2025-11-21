@@ -32,7 +32,11 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
+        if (GameManager.Instance != null && GameManager.Instance.isPaused)
+        {
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
         GetInput();
     }
 
@@ -92,8 +96,8 @@ public class MoveController : MonoBehaviour
             {
                 initialMove = true;
                 Vector3 current = rotateController.playerPivot.transform.localEulerAngles;
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + current.z, transform.eulerAngles.z);
                 rotateController.ResetRotation();
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + current.z, transform.eulerAngles.z);
             }
         }
         else

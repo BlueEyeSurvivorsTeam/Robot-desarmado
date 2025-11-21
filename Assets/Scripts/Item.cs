@@ -3,7 +3,7 @@ using System.Collections;
 public class Item : MonoBehaviour
 {
     public PieceType type;
-
+    public GameObject model;
     [Header("Item rotativo")]
     public bool isRotating = false;
     public bool rotateX = false;
@@ -40,6 +40,10 @@ public class Item : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.isPaused)
+        {
+            return;
+        }
         if (isRotating)
         {
             Vector3 rotationVector = new Vector3(
@@ -82,7 +86,8 @@ public class Item : MonoBehaviour
         if(other.GetComponentInParent<RobotChangeParts>() && other.GetComponentInParent<RobotChangeParts>().NeedRepair(type)) 
         {
             other.GetComponentInParent<RobotChangeParts>().Repair(type);
-            gameObject.SetActive(false);
+            model.SetActive(false);
+            enabled = false;
         }
     }
 }

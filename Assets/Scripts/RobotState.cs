@@ -13,8 +13,8 @@ public class RobotState : MonoBehaviour
     public AnimatorOverrideController torso;
 
     [Header("Estados")]
-    public bool hasLeftArm = true;
-    public bool hasRightArm = true;
+    public bool hasProyectileHand = true;
+    public bool hasRocketHand = true;
     public bool hasLegs = true;
     public bool isSeparate = false;
 

@@ -36,7 +36,7 @@ public class ProyectileHandController : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
-        if (canShoot && !isShooting && state.hasLeftArm && state.currentTarget == proyectileHand.gameObject && !state.isSeparate)
+        if (canShoot && !isShooting && state.hasProyectileHand && state.currentTarget == proyectileHand.gameObject && !state.isSeparate)
         {
             GetInput();
         }
@@ -61,7 +61,7 @@ public class ProyectileHandController : MonoBehaviour
         {
             lineRenderer.enabled = false;
             isShooting = true;
-            state.hasLeftArm = false;
+            state.hasProyectileHand = false;
             originalHand.SetActive(false);
             robot.ChangePart(robot.robotWithProyectile, false, true, robot.proyectileHand, robot.proyectileHandPoint, transform.forward * 0.5f, robot.proyectileCam, robot.proyectileHand);
             proyectileHand.Throw(this, force * robot.proyectileHandPoint.forward);

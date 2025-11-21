@@ -93,6 +93,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2804660da96e23742b20d37e99f119a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1523233456748483504}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2804660da96e23742b20d37e99f119a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7939025127855631565}
     - targetCorrespondingSourceObject: {fileID: -2103020209161470156, guid: 2804660da96e23742b20d37e99f119a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1999317041597114015}
@@ -191,6 +194,18 @@ MonoBehaviour:
   enterEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7939025127855631565}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Active
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2627558069421194391}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
@@ -219,6 +234,19 @@ MonoBehaviour:
   exitEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7939025127855631565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3910388817224895789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f55e3ab94cc9541a208aeb5151aeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 6429ef6fc932abf48bd557105f587cfb, type: 3}
 --- !u!1 &6365141514169012040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2103020209161470156, guid: 2804660da96e23742b20d37e99f119a3, type: 3}

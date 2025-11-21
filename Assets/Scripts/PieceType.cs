@@ -1,4 +1,4 @@
 public enum PieceType
 {
-    Legs, RightArm, LeftArm
+    Legs, ProyectileHand, RocketHand
 }

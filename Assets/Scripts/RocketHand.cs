@@ -15,12 +15,23 @@ public class RocketHand : MonoBehaviour
     }
     private void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
+        if (GameManager.Instance != null && GameManager.Instance.isPaused)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            return;
+        }
+        if(rb.constraints == RigidbodyConstraints.FreezeAll && GameManager.Instance != null && !GameManager.Instance.isPaused)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+        }
         GetInput();
     }
     private void FixedUpdate()
     {
-        if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
+        if (GameManager.Instance != null && GameManager.Instance.isPaused)
+        {
+            return;
+        }
         rb.linearVelocity = transform.forward * moveSpeed;
         Rotate();
     }
@@ -39,7 +50,15 @@ public class RocketHand : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Breakable"))
+        {
+            Breakable breakable = collision.gameObject.GetComponent<Breakable>();
+            if(breakable != null )
+            {
+                breakable.Break();
+            }
+        }
+        if(!collision.gameObject.CompareTag("Breakable"))
         {
             rhc.LoseHand();
             this.gameObject.SetActive(false);

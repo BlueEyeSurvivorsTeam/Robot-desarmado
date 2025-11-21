@@ -22,7 +22,7 @@ public class RocketHandController : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance != null && GameManager.Instance.isPaused) return;
-        if (canShoot && !isShooting && state.hasRightArm && state.currentTarget == rocketHand.gameObject && !state.isSeparate)
+        if (canShoot && !isShooting && state.hasRocketHand && state.currentTarget == rocketHand.gameObject && !state.isSeparate)
         {
             GetInput();
         }
@@ -43,7 +43,7 @@ public class RocketHandController : MonoBehaviour
         if (Input.GetKeyDown(shootKey) && isAiming)
         {
             isShooting = true;
-            state.hasRightArm = false;
+            state.hasRocketHand = false;
             originalHand.SetActive(false);
             rocketHand.SetRHC(this);
             robot.ChangePart(robot.robotWithRocket, false, true, robot.rocketHand, robot.rocketHandPoint, transform.forward * 0.5f, robot.rocketCam, robot.rocketHand);
