@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395787259508455895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.72373116, y: -0.03438342, z: -0.032707285, w: 0.6884485}
+  m_LocalRotation: {x: -0.72373116, y: 0.034383513, z: 0.032707274, w: -0.6884485}
   m_LocalPosition: {x: -0.18401961, y: 1.1562865, z: 0.28542042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2661,7 +2661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21745f0b8c1854243b007598a1d470ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 70
   speedChangeForce: 3
   maxForce: 10
   minForce: 5
@@ -4859,7 +4859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81960f35f619f614b9ce7447483bfedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 6
   rotationSpeed: 180
 --- !u!54 &3961915242613322668
 Rigidbody:

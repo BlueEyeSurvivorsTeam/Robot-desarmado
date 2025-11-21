@@ -3,6 +3,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool isPaused { get; private set; }
+
+    public GameObject checkpointPos;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -15,9 +17,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    
+
     public void SetPause(bool boolean)
     {
         isPaused = boolean;
+    }
+    public void SetCheckpointPos(GameObject pos)
+    {
+        checkpointPos = pos;
     }
 }
