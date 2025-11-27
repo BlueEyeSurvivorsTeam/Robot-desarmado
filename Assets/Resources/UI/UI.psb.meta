@@ -95,7 +95,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Capa 1
+  - name: Capa 2
     originalName: 
     pivot: {x: 0, y: 0}
     alignment: 0
@@ -103,11 +103,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 9
-      y: 345
+      x: 16
+      y: 1150
       width: 43
       height: 353
-    spriteID: 925c835612974744885dc972318aae33
+    spriteID: 2a9549e4229875a4799a24c4e8e3a21d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -116,7 +116,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 24, y: 79}
+    spritePosition: {x: 17, y: 32}
   - name: UI_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -125,11 +125,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 108
-      y: 468
+      x: 115
+      y: 1273
       width: 258
       height: 116
-    spriteID: 3e81184d9e1ba204f9416339a045d717
+    spriteID: b8d7fa6e67ff6f04b91dbb9357de59d1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -137,7 +137,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 108, y: 468}
+    uvTransform: {x: 115, y: 1273}
     spritePosition: {x: 0, y: 0}
   - name: UI_1
     originalName: 
@@ -147,11 +147,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 428
-      y: 460
+      x: 435
+      y: 1265
       width: 144
       height: 241
-    spriteID: 677492f047365844d9d13ff95b0d5ee7
+    spriteID: 3b4ba7f91bdb3f440b62d823f97a3092
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,7 +159,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 428, y: 460}
+    uvTransform: {x: 435, y: 1265}
     spritePosition: {x: 0, y: 0}
   - name: UI_2
     originalName: 
@@ -169,11 +169,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 646
-      y: 516
-      width: 298
+      x: 652
+      y: 1321
+      width: 299
       height: 90
-    spriteID: abc66d636696f1c4eaae616ee4d250fb
+    spriteID: 3afba1d2e3d3b394599836b6df3a68d5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -181,7 +181,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 646, y: 516}
+    uvTransform: {x: 652, y: 1321}
     spritePosition: {x: 0, y: 0}
   - name: UI_3
     originalName: 
@@ -191,11 +191,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 984
-      y: 461
-      width: 141
+      x: 991
+      y: 1266
+      width: 142
       height: 146
-    spriteID: dcd1165bca122df4a8a8ceb8db77dc40
+    spriteID: 1f8e5066229fc82488df0a62d997e566
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -203,7 +203,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 984, y: 461}
+    uvTransform: {x: 991, y: 1266}
     spritePosition: {x: 0, y: 0}
   - name: UI_4
     originalName: 
@@ -213,11 +213,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 149
-      y: 310
+      x: 156
+      y: 1115
       width: 131
       height: 142
-    spriteID: 8ebb3484d50623f4e886654e773da5c3
+    spriteID: e9fb49ffe0736cb438c6b6fbea2bdad8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -225,7 +225,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 149, y: 310}
+    uvTransform: {x: 156, y: 1115}
     spritePosition: {x: 0, y: 0}
   - name: UI_5
     originalName: 
@@ -235,11 +235,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 644
-      y: 373
+      x: 651
+      y: 1178
       width: 127
       height: 127
-    spriteID: 1cfe97b85951c7f44a46f548b4596cf6
+    spriteID: f4c495c8d5b976b4f820ef1e6f87e0fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -247,7 +247,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 644, y: 373}
+    uvTransform: {x: 651, y: 1178}
     spritePosition: {x: 0, y: 0}
   - name: UI_6
     originalName: 
@@ -257,11 +257,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 791
-      y: 387
-      width: 167
-      height: 106
-    spriteID: e8c09c5ec5cd76d48abf84f278203b9d
+      x: 799
+      y: 1191
+      width: 166
+      height: 107
+    spriteID: cf771a88e76d44d4bb2f31163dea620e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -269,7 +269,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 791, y: 387}
+    uvTransform: {x: 799, y: 1191}
     spritePosition: {x: 0, y: 0}
   - name: UI_7
     originalName: 
@@ -279,11 +279,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 14
-      y: 157
+      x: 21
+      y: 962
       width: 197
       height: 126
-    spriteID: e3174c1ced5a8ee41aeccc4cc12c1a8b
+    spriteID: a28010a5fcaadb048b8ed9f47566660e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -291,7 +291,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 14, y: 157}
+    uvTransform: {x: 21, y: 962}
     spritePosition: {x: 0, y: 0}
   - name: UI_8
     originalName: 
@@ -301,11 +301,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 325
-      y: 202
+      x: 332
+      y: 1007
       width: 223
       height: 130
-    spriteID: 2062b1383f4634e4b855446be209d933
+    spriteID: 831dd01fcd86b2746a2682e26f075c6c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -313,7 +313,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 325, y: 202}
+    uvTransform: {x: 332, y: 1007}
     spritePosition: {x: 0, y: 0}
   - name: UI_9
     originalName: 
@@ -323,11 +323,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 651
-      y: 250
-      width: 118
-      height: 115
-    spriteID: ac649da1270ec044f9e786630c42df43
+      x: 659
+      y: 1055
+      width: 117
+      height: 114
+    spriteID: c99832139a52ee248abec32b2718a87a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -335,7 +335,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 651, y: 250}
+    uvTransform: {x: 659, y: 1055}
     spritePosition: {x: 0, y: 0}
   - name: UI_10
     originalName: 
@@ -345,11 +345,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 791
-      y: 266
+      x: 798
+      y: 1071
       width: 208
       height: 97
-    spriteID: 752b02164c1884b4388618a35887a605
+    spriteID: f41617d93383b594a88912213089d700
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -357,7 +357,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 791, y: 266}
+    uvTransform: {x: 798, y: 1071}
     spritePosition: {x: 0, y: 0}
   - name: UI_11
     originalName: 
@@ -367,11 +367,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 643
-      y: 139
-      width: 318
-      height: 105
-    spriteID: ea00a5062f6404c4eba7c84eda7db302
+      x: 11
+      y: 809
+      width: 203
+      height: 97
+    spriteID: 50f2dc248e976494ca63033a00b22a6e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -379,7 +379,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 643, y: 139}
+    uvTransform: {x: 11, y: 809}
     spritePosition: {x: 0, y: 0}
   - name: UI_12
     originalName: 
@@ -389,11 +389,33 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
+      x: 651
+      y: 807
+      width: 317
+      height: 242
+    spriteID: 0048fa9ba3f390148b6ed2d731a7e8b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 651, y: 807}
+    spritePosition: {x: 0, y: 0}
+  - name: UI_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
       x: 4
       y: 4
-      width: 203
-      height: 97
-    spriteID: 4ea5e10c8d8695b49be6a2e5962b63ef
+      width: 510
+      height: 774
+    spriteID: d01eec6dfc3f9ff4b97fb43d4b386b6b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -462,12 +484,12 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Capa 1
-    spriteName: Capa 1
+  - name: Capa 2
+    spriteName: Capa 2
     isGroup: 0
     parentIndex: -1
-    spriteID: 925c835612974744885dc972318aae33
-    layerID: 2
+    spriteID: 2a9549e4229875a4799a24c4e8e3a21d
+    layerID: 5
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
