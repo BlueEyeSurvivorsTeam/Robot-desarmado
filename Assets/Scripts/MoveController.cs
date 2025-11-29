@@ -46,6 +46,10 @@ public class MoveController : MonoBehaviour
         {
             MovePlayer();
         }
+        else
+        {
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+        }
     }
 
     void GetInput()

@@ -5,8 +5,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool isPaused { get; private set; }
-
-    public GameObject checkpointPos;
+    public bool reloadScene { get; private set; }
+    public float currentTime { get; private set; } = 10000;
+    public float GetCurrentTime() => currentTime;
+    public Vector3 checkpointPos { get; private set; }
+    public Vector3 GetPos() => checkpointPos;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -59,12 +62,27 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         SceneManager.LoadScene(nameScene);
     }
+    public IEnumerator TransitionSceneCheckpoint(string nameScene, Animator anim)
+    {
+        if (anim != null) anim.SetTrigger("Transition");
+        reloadScene = true;
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        SceneManager.LoadScene(nameScene);
+    }
     public void SetPause(bool boolean)
     {
         isPaused = boolean;
     }
-    public void SetCheckpointPos(GameObject pos)
+    public void SetReload(bool boolean)
     {
-        checkpointPos = pos;
+        reloadScene = boolean;
+    }
+    public void SetPos(GameObject pos)
+    {
+        checkpointPos = pos.transform.position;
+    }
+    public void SetCurrentTime(float current)
+    {
+        currentTime = current;
     }
 }

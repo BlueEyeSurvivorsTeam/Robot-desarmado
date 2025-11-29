@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 9196676352397964196}
   m_Layer: 0
   m_Name: Shelf Grate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 3532632381191055376}
   m_Layer: 0
   m_Name: LP_shelf
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

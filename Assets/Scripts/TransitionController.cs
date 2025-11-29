@@ -25,6 +25,10 @@ public class TransitionController : MonoBehaviour
     {
         if(GameManager.Instance != null) StartCoroutine(GameManager.Instance.TransitionScene(nameScene, anim));
     }
+    public void LoadSceneReload(string nameScene)
+    {
+        if (GameManager.Instance != null) StartCoroutine(GameManager.Instance.TransitionSceneCheckpoint(nameScene, anim));
+    }
     public void CloseGame()
     {
         if(GameManager.Instance != null) StartCoroutine(GameManager.Instance.TransitionClose(anim));

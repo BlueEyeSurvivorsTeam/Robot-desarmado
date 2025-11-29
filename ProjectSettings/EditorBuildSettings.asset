@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel.unity
     guid: 72c8c0940dad6c647a1234289aa00a5f
+  - enabled: 1
+    path: Assets/Scenes/Escape.unity
+    guid: 2312b6814152a71459b6bf5e7690535e
+  - enabled: 1
+    path: Assets/Scenes/Normal.unity
+    guid: 588e9c8052dcafa4c81afcde4d1d120e
+  - enabled: 1
+    path: Assets/Scenes/Perder.unity
+    guid: 6fc7ce81f1965f64a9ccb234866b5edc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

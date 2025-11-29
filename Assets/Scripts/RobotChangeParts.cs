@@ -7,7 +7,7 @@ public class RobotChangeParts : MonoBehaviour
     public bool canSeparate = true;
     [Header("Referencias")]
     public Animator animPlayer;
-
+    public Animator partsPanel;
     [Header("Override Controllers")]
     public AnimatorOverrideController robotWithRocket;
     public AnimatorOverrideController robotWithProyectile;
@@ -40,6 +40,15 @@ public class RobotChangeParts : MonoBehaviour
         cams.Add(playerCam);
         cams.Add(legsCam);
         cams.Add(rocketCam);
+        if(GameManager.Instance.reloadScene)
+        {
+            GameManager.Instance.SetReload(false);
+            transform.position = GameManager.Instance.GetPos();
+        }
+        else
+        {
+            GameManager.Instance.SetPos(gameObject);
+        }
     }
     private void Update()
     {
@@ -55,13 +64,13 @@ public class RobotChangeParts : MonoBehaviour
         }
         if (Input.GetKey(changePartButton))
         {
+            if(partsPanel != null)
+            {
+                partsPanel.SetBool("Open", true);
+            }
             if(state.isSeparate)
             {
-                if(Input.GetKeyDown(KeyCode.Alpha1) && state.hasProyectileHand && state.hasRocketHand)
-                {
-                    ChangePart(playerCam, this.gameObject);
-                }
-                else if(Input.GetKeyDown(KeyCode.Alpha2) && state.isSeparate && state.hasLegs)
+                if(Input.GetKeyDown(KeyCode.Alpha1) && state.isSeparate && state.hasLegs)
                 {
                     ChangePart(legsCam, legs);
                 }
@@ -70,10 +79,6 @@ public class RobotChangeParts : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1) && state.hasProyectileHand && state.hasRocketHand && canSeparate)
                 {
-                    ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), playerCam, this.gameObject);
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha2) && state.hasProyectileHand && state.hasRocketHand && canSeparate)
-                {
                     ChangePart(torso, true, true, legs, legsPoint, -transform.forward + (Vector3.up * 0.5f), legsCam, legs);
                 }
                 else if (Input.GetKeyDown(KeyCode.Alpha3) && state.hasRocketHand)
@@ -81,17 +86,24 @@ public class RobotChangeParts : MonoBehaviour
                     ChangePart(robotWithRocket, false, false, rocketHand, rocketHandPoint, Vector3.zero, playerCam, this.gameObject);
                     state.currentTarget = rocketHand;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha4) && !proyectileHand.activeInHierarchy)
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && !proyectileHand.activeInHierarchy)
                 {
                     ChangePart(robotWithProyectile, false, false, proyectileHand, proyectileHandPoint, Vector3.zero, playerCam, this.gameObject);
                     state.currentTarget = proyectileHand;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha4) && proyectileHand.activeInHierarchy)
+                else if (Input.GetKeyDown(KeyCode.Alpha2) && proyectileHand.activeInHierarchy)
                 {
                     ChangePart(proyectileCam, proyectileHand);
                 }
             }
-        }   
+        }
+        else
+        {
+            if (partsPanel != null)
+            {
+                partsPanel.SetBool("Open", false);
+            }
+        }
     }
     public void ChangePart(AnimatorOverrideController anim, bool isSeparate, bool dropping, GameObject drop, Transform parent, Vector3 direction, CinemachineCamera camPriority, GameObject current)
     {

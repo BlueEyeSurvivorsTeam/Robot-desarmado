@@ -20,6 +20,10 @@ public class Animations : MonoBehaviour
             {
                 anim.SetFloat("Move", mc.currentAnimSpeed);
             }
+            else
+            {
+                anim.SetFloat("Move", 0);
+            }
         }
         if(jc.canJump)
         {
