@@ -32,6 +32,10 @@ public class RobotChangeParts : MonoBehaviour
     public CinemachineCamera proyectileCam;
     private List<CinemachineCamera> cams = new List<CinemachineCamera>();
     private RobotState state;
+
+    [Header("Sonidos")]
+    public AudioClip connect;
+    public AudioClip disconnect;
     private void Start()
     {
         if(legs != null) legs.SetActive(false);
@@ -135,6 +139,7 @@ public class RobotChangeParts : MonoBehaviour
     }
     void Drop(GameObject part, Vector3 direction)
     {
+        AudioManager.Instance.PlaySFX(disconnect);
         Transform parent = part.transform.parent;
         part.transform.SetParent(null, true);
         part.SetActive(true);
@@ -151,6 +156,7 @@ public class RobotChangeParts : MonoBehaviour
     }
     void Take(GameObject part, Transform parent)
     {
+        AudioManager.Instance.PlaySFX(connect);
         part.transform.SetParent(parent, false);
         part.transform.localPosition = Vector3.zero;
         part.transform.localRotation = Quaternion.identity;
