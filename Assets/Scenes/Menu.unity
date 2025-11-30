@@ -3340,7 +3340,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Desarrolladores
 
-    -'
+    -
+
+    Francisco Araya
+
+    Max Duque'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b682323fe02582c4eac49071eb86456c, type: 2}
   m_sharedMaterial: {fileID: 5925634125178391245, guid: b682323fe02582c4eac49071eb86456c, type: 2}
@@ -4561,7 +4565,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 140}
+  m_SizeDelta: {x: 138.5, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271271406
 MonoBehaviour:
@@ -4583,7 +4587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sonidos y m\xFAsica"
+  m_text: "Sonidos y m\xFAsica\n\n-\n\n\nUnity Technologies\n\nfreesound_community"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b682323fe02582c4eac49071eb86456c, type: 2}
   m_sharedMaterial: {fileID: 5925634125178391245, guid: b682323fe02582c4eac49071eb86456c, type: 2}
@@ -4610,21 +4614,21 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 13.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 20
+  m_fontSizeMin: 0
+  m_fontSizeMax: 13.9
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -18.7
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -32.21
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -5068,7 +5072,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Assets
+  m_text: "Assets\n\n-\n\n-Placa de presi\xF3n-\r\n\r\nKacper \"Papysh\" \u017Burawski\r\n\r\n-Bot\xF3n-\r\n\r\nMark\r\n\r\n-Sci
+    fi construction kit modular-\r\n\nSickhead Games\r\n\r\n-Low poly metal rack-\r\n\r\nDigitalHakka\r\n\r\n-Container-\r\n\r\nMehdi
+    Shahsavan\n\r\n-Gr\xFAa-\r\n\r\nDaelonik Artworks\r\n\r\n-Adventure game environment
+    pack-\r\n\r\nUnity Technologies\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b682323fe02582c4eac49071eb86456c, type: 2}
   m_sharedMaterial: {fileID: 5925634125178391245, guid: b682323fe02582c4eac49071eb86456c, type: 2}
@@ -5095,19 +5102,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 13.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 20
-  m_fontStyle: 0
+  m_fontSizeMin: 13.4
+  m_fontSizeMax: 28.5
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -4.61
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -48.3
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -5804,7 +5811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8188113912686573848, guid: 693e114ebbb48824d9394d6bec18128b, type: 3}
+  m_Sprite: {fileID: -5671168447591687401, guid: 693e114ebbb48824d9394d6bec18128b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
