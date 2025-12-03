@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Robot-desarmado.sln"
+    "dotnet.defaultSolution": "Robot-desarmado-UI.sln"
 }
